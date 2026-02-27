@@ -53,4 +53,15 @@ class PetViewModel: ObservableObject {
             }
         }
     }
+    // Add this inside your PetViewModel class
+    func deletePet(at indexSet: IndexSet) {
+        pets.remove(atOffsets: indexSet)
+    }
+
+    func deletePet(_ pet: PetProfile) {
+        pets.removeAll(where: { $0.id == pet.id })
+        if selectedPet?.id == pet.id {
+            selectedPet = nil
+        }
+    }
 }

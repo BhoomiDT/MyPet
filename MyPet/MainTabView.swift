@@ -21,7 +21,7 @@ struct MainTabView: View {
             }
             
             // TAB 2: AR
-            ARContainerView(viewModel: viewModel)
+            ARHubView(viewModel: viewModel)
                 .tabItem {
                     Label("AR Play", systemImage: "arkit")
                 }
@@ -34,6 +34,6 @@ struct MainTabView: View {
                 Label("Academy", systemImage: "graduationcap.fill")
             }
         }
-        .accentColor(.mint)
+        .accentColor(.purple)
     }
 }
