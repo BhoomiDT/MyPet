@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             if !hasStarted {
-                OnboardingView { hasStarted = true }
+                HomeView(viewModel: viewModel)
                     .transition(.move(edge: .leading))
             } else {
                 // The AR Space

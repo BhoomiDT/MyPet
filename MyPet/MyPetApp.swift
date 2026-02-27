@@ -11,7 +11,8 @@ import SwiftUI
 struct MyPetApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()
+//            ContentView()
         }
     }
 }
