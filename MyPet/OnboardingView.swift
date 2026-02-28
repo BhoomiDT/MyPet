@@ -13,7 +13,11 @@ struct HomeView: View {
     // Premium Purple Palette
     let brandPurple = Color(hex: "8E2DE2")
     let backgroundColor = Color(hex: "F8F9FB")
-    
+    var todayDateString: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "EEEE, MMM d" // e.g., "Saturday, Feb 28"
+        return formatter.string(from: Date()).uppercased()
+    }
     var body: some View {
         ZStack {
             LinearGradient(
@@ -34,9 +38,9 @@ struct HomeView: View {
                     // --- 1. HEADER ---
                     HStack {
                         VStack(alignment: .leading, spacing: 4) {
-                            Text("FRIDAY, FEB 27")
-                                .font(.system(size: 11, weight: .bold))
-                                .foregroundColor(.secondary)
+                            Text(todayDateString)
+                                        .font(.system(size: 11, weight: .bold))
+                                        .foregroundColor(.secondary)
                             Text("Pet Dashboard")
                                 .font(.system(size: 28, weight: .bold, design: .rounded))
                                 .foregroundColor(Color(hex: "1A1C1E"))
@@ -68,7 +72,7 @@ struct HomeView: View {
                             Image(systemName: "lightbulb.fill")
                                 .foregroundColor(brandPurple)
                                 .font(.system(size: 14, weight: .bold))
-                            Text("DAILY KNOWLEDGE")
+                            Text("DAILY INSIGHT")
                                 .font(.system(size: 11, weight: .black))
                                 .kerning(1.2)
                                 .foregroundColor(.secondary)
